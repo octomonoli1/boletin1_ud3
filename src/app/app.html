@@ -231,7 +231,37 @@
         </defs>
       </svg>
       <h1>Hello, {{ title() }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <!-- Sustituimos esta parte por nuestros resultados -->
+      <h2>Ejercicio 1</h2>
+      <p>Realiza un array llamado playas donde almacenes las cinco playas favoritas que 
+      tengas. Recorra ahora dicho array mostrando las playas que ocupan posición par. </p>
+      
+      <ul *ngFor="let playa of filtra_playas_pares()">
+          <li>{{ playa }}</li>
+      </ul>
+
+      <h2>Ejercicio 2</h2>
+
+      <p>Realiza un array que almacene las notas de diez alumnos de clase. Pinta la menor y 
+      la mayor de todas.</p>
+
+      <p> La nota mayor es: {{ obten_nota_max() }}</p>
+      <p> La nota menor es: {{ obten_nota_min() }}</p>
+
+      <h2>Ejercicio 3</h2>
+      <p>Realiza un array que almacene las edades de todos los compañeros de clase. Pinta 
+      la media ignorando a los que son menores de 18 y mayores de 50.</p>
+
+      <p> La edad media de clase es: {{ obten_media_clase() }}</p>
+
+      <h2>Ejercicio 4</h2>
+      <p>Eliminar el color verde de un array que almacena cinco colores cualesquiera, entre 
+      ellos debe estar el verde.</p>
+
+      <ul *ngFor="let color of elimina_color('blanco')">
+        <li>{{ color }}</li>
+      </ul>
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

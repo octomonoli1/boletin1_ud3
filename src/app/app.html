@@ -258,9 +258,27 @@
       <p>Eliminar el color verde de un array que almacena cinco colores cualesquiera, entre 
       ellos debe estar el verde.</p>
 
-      <ul *ngFor="let color of elimina_color('blanco')">
+      <ul *ngFor="let color of elimina_color('amarillo')">
         <li>{{ color }}</li>
       </ul>
+
+      <h2>Ejercicio 5</h2>
+      <p> Supon un array ordenado alfabéticamente de frutas. (Aguacate, Banana, Chirimoya, 
+      Dátil, Fresa, Guayaba, Kiwi, Limón, Naranja, Pera, Sandía, Uva, Yuca). Introduce el 
+      melón de forma que el orden se mantenga usando splice </p><br>
+
+      <label for="fruta"></label>
+      <input (keydown.enter)="inserta_fruta()" [(ngModel)]="fruta" id="fruta" type="text"/>
+      <button (click)="inserta_fruta()">Insertar fruta</button>
+
+      <ul *ngFor="let fruta of frutas">
+        <li>{{ fruta }}</li>
+      </ul>
+
+      <h2>Ejercicio 7</h2>
+
+      <p>. Implemente una calculadora de matrices que dada dos matrices del mismo tamaño
+      devuelva una tercera matriz con el resultado de la suma. </p>
 
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

@@ -19,7 +19,6 @@ export class App {
   public frutas: string[] = ["Aguacate", "Banana", "Chirimoya", "Dátil", "Fresa", "Guayaba", "Kiwi", "Limón", "Naranja", "Pera", "Sandía", "Uva", "Yuca"];
   public fruta: string = "";
   public matriz1: number[][] = this.inicializa_matriz();
-  public matriz2: number[][] = this.inicializa_matriz();
 
 
   public filtra_playas_pares(): string[]{
@@ -77,16 +76,9 @@ export class App {
       result.push(fila);
     }
 
-    this.imprime_matriz(result);
+    console.log(result);
     return result;
   }
 
-  private imprime_matriz(matriz: number[][]): void{
-    for(let i = 0; i < 3; i++){
-      for(let j = 0; j < 3; j++){
-        console.log(matriz);
-      }
-    }
-  }
 
 }

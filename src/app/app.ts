@@ -19,7 +19,11 @@ export class App {
   public frutas: string[] = ["Aguacate", "Banana", "Chirimoya", "Dátil", "Fresa", "Guayaba", "Kiwi", "Limón", "Naranja", "Pera", "Sandía", "Uva", "Yuca"];
   public fruta: string = "";
   public matriz1: number[][] = this.inicializa_matriz();
-
+  public entreSemana: Set<string> = new Set(["Lunes","Martes","Miercoles","Jueves","Viernes"]);
+  public finde: Set<string> = new Set(["Viernes","Sabado","Domingo"]);
+  public diasSemana: Set<string> = new Set();
+  public alumnos: Set<string> = this.add_to_set();
+  public alumno = null;
 
   public filtra_playas_pares(): string[]{
     return this.playas.filter((data, idx) => idx%2 == 0);
@@ -80,5 +84,46 @@ export class App {
     return result;
   }
 
+  public rellena_semana(): void{
+    this.diasSemana.add("Lunes").add("Martes").add("Miercoles")
+      .add("Jueves").add("Viernes").add("Viernes").add("Viernes")
+      .add("Viernes").add("Viernes").add("Sabado").add("Domingo");
+  }
+
+  public unir_conjuntos(): void{
+    this.diasSemana = new Set([...this.entreSemana, ...this.finde]);
+  }
+
+  private add_to_set(): Set<string>{
+    let result: Set<string> = new Set();
+    return result.add("Pedro").add("Sara").add("Maria").add("Juan").add("Salvador");
+  }
+
+  public inserta_alumno(): void{
+    if(this.alumno){
+      this.alumnos.add(this.alumno);
+    }
+  }
+
+  public eliminar_alumno(): void{
+    if(this.alumno){
+      this.alumnos.delete(this.alumno);
+    }
+  }
+
+  public encontrar_alumno(): boolean{
+    let encontrado = false;
+    if(this.alumno){
+      encontrado =  this.alumnos.has(this.alumno); 
+    }
+    return encontrado;
+  }
+
+  public elimina_duplicados(): string[]{
+    let lista_con_repetidos: string[] = ["Hola", "Hola", "Adios", "Adios", "Xexu"];
+    let conjunto_elementos: Set<string> = new Set(lista_con_repetidos);
+    let lista_sin_repetidos =  [...conjunto_elementos];
+    return lista_sin_repetidos;
+  }
 
 }

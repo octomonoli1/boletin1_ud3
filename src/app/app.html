@@ -280,6 +280,54 @@
       <p>. Implemente una calculadora de matrices que dada dos matrices del mismo tamaño
       devuelva una tercera matriz con el resultado de la suma. </p>
 
+      <h2>Ejercicio 11</h2>
+
+      <p>Crea un conjunto que almacene los 7 días de la semana y muéstralos por pantalla. </p>
+
+      {{ unir_conjuntos () }}
+
+      <ul *ngFor="let dia of diasSemana">
+        <li>{{ dia }}</li>
+      </ul>
+
+      <h2>Ejercicio 12</h2>
+
+      <p>Crea un conjunto vacío y empieza a añadir uno a uno los nombres de tus compañeros. 
+      Elimina ahora uno que se encuentre en una posición central. 
+      Busque sobre ese conjunto alumnos que estén y que no estén dentro del conjunto. 
+      Indica el tamaño del conjunto al terminar.</p>
+      
+      <ul>
+        @for (alumno of alumnos; track $index) {
+          <li> {{ alumno }} </li>
+        }
+      </ul>
+    
+      <label for="nombre_alumno"></label>
+      <input [(ngModel)]="alumno" id="nombre_alumno" type="text"/>
+      <button (click)="inserta_alumno()">Insertar alumno</button>
+      <button (click)="eliminar_alumno()">Eliminar alumno</button>
+      
+      @if(encontrar_alumno() && alumno){
+        <p style="color: green"> El alumno se encuentra en el conjutno </p>
+      }@else {
+        <p style="color: red;"> El alumno no se encuentra en el conjutno </p>
+      }
+
+      <p>Existen <b> {{ alumnos.size }} </b> alumnos</p>
+
+      <h2>Ejercicio 13</h2>
+
+      <p>Crea un array con elementos duplicados y desarrolla una función que se 
+      llame eliminaDuplicados() que realiza la función correspondiente para eliminar 
+      aquellos elementos que se encuentren más de una vez dentro del array</p>
+
+      <ul>
+          @for(elemento of elimina_duplicados(); track $index){
+            <li>{{elemento}}</li>
+          }
+      </ul>
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

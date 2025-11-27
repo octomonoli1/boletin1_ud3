@@ -126,4 +126,12 @@ export class App {
     return lista_sin_repetidos;
   }
 
+  public combina_listas_en_conjunto(): void{
+    let lista1: number[] = [1,2,3,4,5,6,7,8,9,10];
+    let lista2: number[] = [6,7,8,9,10,11,12,13,14,15];
+    let lista3: number[] = [11,12,13,14,15,16,17,18,19,20];
+    let set: Set<number> = new Set([...lista1,...lista2,...lista3]);
+    console.table(set);
+  }
+
 }

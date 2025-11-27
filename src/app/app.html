@@ -335,6 +335,25 @@
 
       {{ combina_listas_en_conjunto() }}
 
+      <h2>Ejercicio 15</h2>
+      <p>Inventa un listín telefónico de 10 personas de modo que no quieras memorizar
+      sus teléfonos, solo sus nombres y puedas en cualquier momento consultar el número
+      de teléfono de cada uno de ellos. Pinta el listín telefónico completo y el teléfono
+      de una persona en concreto. ¿Qué ocurre si consultas el teléfono de una persona que 
+      no se encuentra dentro del listín? ¿Puede tener el mismo número de teléfono una persona? 
+      ¿Puede una persona tener más de un teléfono?</p>
+
+      <label for="telefono_de"></label>
+      <input [(ngModel)]="persona" id="telefono_de" type="text"/>
+
+      @if(persona != "" && listin_telefonico().get(persona) ){
+        <p>Telefono de {{persona}}: {{listin_telefonico().get(persona)}}</p>
+      }@else{
+        <p>El usuario no existe, deseas agregarlo?</p>
+        <input [(ngModel)]="tfno" id="tfno" type="text"/>
+      }
+      
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">

@@ -24,6 +24,8 @@ export class App {
   public diasSemana: Set<string> = new Set();
   public alumnos: Set<string> = this.add_to_set();
   public alumno = null;
+  public persona = "";
+  public tfno = "";
 
   public filtra_playas_pares(): string[]{
     return this.playas.filter((data, idx) => idx%2 == 0);
@@ -132,6 +134,19 @@ export class App {
     let lista3: number[] = [11,12,13,14,15,16,17,18,19,20];
     let set: Set<number> = new Set([...lista1,...lista2,...lista3]);
     console.table(set);
+  }
+
+  public listin_telefonico(): Map<string, string>{
+    let listin: Map<string,string> = new Map();
+
+    listin.set("Fernando","600123666");
+    listin.set("Juan","999123123");
+    listin.set("Maria","999123123");
+    listin.set("Xexu","611222343");
+
+    console.table(listin);
+
+    return listin;
   }
 
 }
